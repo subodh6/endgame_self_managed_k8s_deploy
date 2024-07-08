@@ -1,19 +1,19 @@
 version: 0.2
 env:
   secrets-manager:
-    DB_USER: "endgame-secret:db_user"
-    DB_PASS: "endgame-secret:db_pass"
-    DB_HOST: "endgame-secret:db_host"
-    DB: "endgame-secret:db"
-    BACKEND_URL: "endgame-secret:backend_url"
+    #DB_USER: "endgame-secret:db_user"
+    #DB_PASS: "endgame-secret:db_pass"
+    #DB_HOST: "endgame-secret:db_host"
+    #DB: "endgame-secret:db"
+    #BACKEND_URL: "endgame-secret:backend_url"
     FRONTEND_REPO_URI: "endgame-secret:fronted_repo_uri"
     REGION: "endgame-secret:region"
     ACC_NO: "endgame-secret:acc_no"
-    BACKEND_REPO_URI: "endgame-secret:backend_repo_uri"
+    #BACKEND_REPO_URI: "endgame-secret:backend_repo_uri"
     # add the base64 encoded value of kubeconfig file in secret manager
     # use the command "base64 -w 0" to avoid the line breaks 
     SECRET_NAME: "endgame-secret:secret_name"
-    ASSUME_ROLE_ARN: "endgame-secret:assume_role_arn"
+    #ASSUME_ROLE_ARN: "endgame-secret:assume_role_arn"
     CLUSTER_NAME: "endgame-secret:cluster_name"
     GIT_USER: "endgame-secret:git_user"
     GIT_PAT: "endgame-secret:git_pat"
