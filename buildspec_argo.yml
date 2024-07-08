@@ -32,7 +32,7 @@ phases:
     - aws sts get-caller-identity
     - cd frontend
     - echo "------ logging into the python ecr repo ------"
-    - aws ecr get-login-password --region ${REGION} |sudo docker login --username AWS --password-stdin ${ACC_NO}.dkr.ecr.ap-south-1.amazonaws.com
+    - aws ecr get-login-password --region ${REGION} |sudo docker login --username AWS --password-stdin ${ACC_NO}.dkr.ecr.us-east-1.amazonaws.com
     - echo "------ building the docker images ------"
     - sudo docker build -t frontend -f Dockerfile-modified .
     - sudo docker tag frontend ${FRONTEND_REPO_URI}:${CODEBUILD_BUILD_NUMBER}
