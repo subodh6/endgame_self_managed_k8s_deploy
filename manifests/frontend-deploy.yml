@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 954503069243.dkr.ecr.us-east-1.amazonaws.com/subodhowaspp:20
+        image: 954503069243.dkr.ecr.us-east-1.amazonaws.com/subodhowaspp:22
         imagePullPolicy: Always
         ports:
         - name: frontend-port
