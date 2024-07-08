@@ -38,9 +38,9 @@ phases:
     - sudo docker tag frontend ${FRONTEND_REPO_URI}:${CODEBUILD_BUILD_NUMBER}
     - sudo docker tag frontend ${FRONTEND_REPO_URI}:latest
     - cd ../backend/
-    - sudo docker build -t backend .
-    - sudo docker tag backend ${BACKEND_REPO_URI}:${CODEBUILD_BUILD_NUMBER}
-    - sudo docker tag backend ${BACKEND_REPO_URI}:latest
+    #- sudo docker build -t backend .
+    #- sudo docker tag backend ${BACKEND_REPO_URI}:${CODEBUILD_BUILD_NUMBER}
+    #- sudo docker tag backend ${BACKEND_REPO_URI}:latest
 
 
     - echo "------ pushing docker images ------"
@@ -49,9 +49,9 @@ phases:
     - sudo docker push ${FRONTEND_REPO_URI}:latest
 
 
-    - aws ecr get-login-password --region ${REGION} |sudo docker login --username AWS --password-stdin ${BACKEND_REPO_URI}
-    - sudo docker push ${BACKEND_REPO_URI}:${CODEBUILD_BUILD_NUMBER}
-    - sudo docker push ${BACKEND_REPO_URI}:latest
+    #- aws ecr get-login-password --region ${REGION} |sudo docker login --username AWS --password-stdin ${BACKEND_REPO_URI}
+   # - sudo docker push ${BACKEND_REPO_URI}:${CODEBUILD_BUILD_NUMBER}
+    #- sudo docker push ${BACKEND_REPO_URI}:latest
 
   build:
     commands:
@@ -62,8 +62,8 @@ phases:
     - cd ${GIT_REPO}
     - envsubst < secret_tmp.yml > manifests/secret.yml
 
-    - echo "------ changing the backend-deploy_tmp.yml file values ------"
-    - envsubst < backend-deploy_tmp.yml > manifests/backend-deploy.yml
+    #- echo "------ changing the backend-deploy_tmp.yml file values ------"
+    #- envsubst < backend-deploy_tmp.yml > manifests/backend-deploy.yml
 
     - echo "------ changing the frontend-deploy_tmp.yml file values ------"
     - envsubst < frontend-deploy_tmp.yml > manifests/frontend-deploy.yml
